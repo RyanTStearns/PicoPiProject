@@ -1,0 +1,39 @@
+>>> %Run -c $EDITOR_CONTENT
+
+MPY: soft reboot
+WiFi connected: ('192.168.4.130', '255.255.255.0', '192.168.4.1', '192.168.4.1')
+[1/30] OK  total=757ms  keygen=321ms  dh=340ms
+[2/30] OK  total=695ms  keygen=327ms  dh=339ms
+[3/30] OK  total=691ms  keygen=321ms  dh=345ms
+[4/30] OK  total=692ms  keygen=321ms  dh=339ms
+[5/30] OK  total=689ms  keygen=327ms  dh=340ms
+[6/30] OK  total=684ms  keygen=327ms  dh=339ms
+[7/30] OK  total=688ms  keygen=322ms  dh=345ms
+[8/30] OK  total=680ms  keygen=321ms  dh=340ms
+[9/30] OK  total=684ms  keygen=326ms  dh=339ms
+[10/30] OK  total=695ms  keygen=328ms  dh=339ms
+[11/30] OK  total=683ms  keygen=321ms  dh=345ms
+[12/30] OK  total=680ms  keygen=322ms  dh=339ms
+[13/30] OK  total=691ms  keygen=327ms  dh=339ms
+[14/30] OK  total=684ms  keygen=321ms  dh=345ms
+[15/30] OK  total=695ms  keygen=321ms  dh=345ms
+[16/30] OK  total=679ms  keygen=321ms  dh=340ms
+[17/30] OK  total=685ms  keygen=326ms  dh=339ms
+[18/30] OK  total=696ms  keygen=322ms  dh=345ms
+[19/30] OK  total=685ms  keygen=321ms  dh=345ms
+[20/30] OK  total=679ms  keygen=321ms  dh=340ms
+[21/30] OK  total=695ms  keygen=326ms  dh=339ms
+[22/30] OK  total=684ms  keygen=321ms  dh=345ms
+[23/30] OK  total=684ms  keygen=320ms  dh=345ms
+[24/30] OK  total=678ms  keygen=321ms  dh=339ms
+[25/30] OK  total=691ms  keygen=326ms  dh=339ms
+[26/30] OK  total=697ms  keygen=321ms  dh=345ms
+[27/30] OK  total=683ms  keygen=321ms  dh=345ms
+[28/30] OK  total=678ms  keygen=321ms  dh=339ms
+[29/30] OK  total=688ms  keygen=326ms  dh=340ms
+[30/30] OK  total=704ms  keygen=321ms  dh=345ms
+
+Batch complete: 30/30 handshakes succeeded.
+Avg keygen time: 322.9 ms
+Avg DH compute time: 341.6 ms
+>>> 
