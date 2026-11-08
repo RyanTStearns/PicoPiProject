@@ -24,7 +24,7 @@ MASTER_KEY = bytes.fromhex(
 )
 
 SSID = "StearnsGatewayAP"
-PASSWORD = "E@tL0tsOfPi18!"
+PASSWORD = "0Mitted123!"
 GATEWAY_IP = "192.168.4.1"
 GATEWAY_PORT = 5000
 NONCE_LEN = 16
