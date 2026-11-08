@@ -1,0 +1,73 @@
+>>> %Run -c $EDITOR_CONTENT
+
+MPY: soft reboot
+WiFi connected: ('192.168.4.130', '255.255.255.0', '192.168.4.1', '192.168.4.1')
+
+Generating initial ephemeral keypair (not counted in trial timing)...
+Initial keypair ready (321ms, done before trials start)
+
+[1/30] OK  critical_path_total=439ms  dh=340ms
+    (precomputed next keypair in 328ms, marked for gateway, sleeping remaining 1.67s)
+[2/30] OK  critical_path_total=360ms  dh=339ms
+    (precomputed next keypair in 322ms, marked for gateway, sleeping remaining 1.68s)
+[3/30] OK  critical_path_total=371ms  dh=345ms
+    (precomputed next keypair in 322ms, marked for gateway, sleeping remaining 1.68s)
+[4/30] OK  critical_path_total=356ms  dh=338ms
+    (precomputed next keypair in 322ms, marked for gateway, sleeping remaining 1.68s)
+[5/30] OK  critical_path_total=355ms  dh=340ms
+    (precomputed next keypair in 328ms, marked for gateway, sleeping remaining 1.67s)
+[6/30] OK  critical_path_total=356ms  dh=339ms
+    (precomputed next keypair in 323ms, marked for gateway, sleeping remaining 1.68s)
+[7/30] OK  critical_path_total=372ms  dh=345ms
+    (precomputed next keypair in 322ms, marked for gateway, sleeping remaining 1.68s)
+[8/30] OK  critical_path_total=355ms  dh=340ms
+    (precomputed next keypair in 328ms, marked for gateway, sleeping remaining 1.67s)
+[9/30] OK  critical_path_total=355ms  dh=340ms
+    (precomputed next keypair in 328ms, marked for gateway, sleeping remaining 1.67s)
+[10/30] OK  critical_path_total=359ms  dh=340ms
+    (precomputed next keypair in 323ms, marked for gateway, sleeping remaining 1.68s)
+[11/30] OK  critical_path_total=361ms  dh=345ms
+    (precomputed next keypair in 322ms, marked for gateway, sleeping remaining 1.68s)
+[12/30] OK  critical_path_total=356ms  dh=339ms
+    (precomputed next keypair in 329ms, marked for gateway, sleeping remaining 1.67s)
+[13/30] OK  critical_path_total=376ms  dh=339ms
+    (precomputed next keypair in 328ms, marked for gateway, sleeping remaining 1.67s)
+[14/30] OK  critical_path_total=358ms  dh=339ms
+    (precomputed next keypair in 323ms, marked for gateway, sleeping remaining 1.68s)
+[15/30] OK  critical_path_total=366ms  dh=345ms
+    (precomputed next keypair in 322ms, marked for gateway, sleeping remaining 1.68s)
+[16/30] OK  critical_path_total=355ms  dh=340ms
+    (precomputed next keypair in 328ms, marked for gateway, sleeping remaining 1.67s)
+[17/30] OK  critical_path_total=359ms  dh=340ms
+    (precomputed next keypair in 328ms, marked for gateway, sleeping remaining 1.67s)
+[18/30] OK  critical_path_total=384ms  dh=340ms
+    (precomputed next keypair in 322ms, marked for gateway, sleeping remaining 1.68s)
+[19/30] OK  critical_path_total=361ms  dh=345ms
+    (precomputed next keypair in 321ms, marked for gateway, sleeping remaining 1.68s)
+[20/30] OK  critical_path_total=355ms  dh=339ms
+    (precomputed next keypair in 328ms, marked for gateway, sleeping remaining 1.67s)
+[21/30] OK  critical_path_total=354ms  dh=339ms
+    (precomputed next keypair in 329ms, marked for gateway, sleeping remaining 1.67s)
+[22/30] OK  critical_path_total=356ms  dh=340ms
+    (precomputed next keypair in 323ms, marked for gateway, sleeping remaining 1.68s)
+[23/30] OK  critical_path_total=370ms  dh=345ms
+    (precomputed next keypair in 321ms, marked for gateway, sleeping remaining 1.68s)
+[24/30] OK  critical_path_total=356ms  dh=339ms
+    (precomputed next keypair in 328ms, marked for gateway, sleeping remaining 1.67s)
+[25/30] OK  critical_path_total=354ms  dh=340ms
+    (precomputed next keypair in 328ms, marked for gateway, sleeping remaining 1.67s)
+[26/30] OK  critical_path_total=357ms  dh=339ms
+    (precomputed next keypair in 322ms, marked for gateway, sleeping remaining 1.68s)
+[27/30] OK  critical_path_total=361ms  dh=345ms
+    (precomputed next keypair in 322ms, marked for gateway, sleeping remaining 1.68s)
+[28/30] OK  critical_path_total=363ms  dh=339ms
+    (precomputed next keypair in 328ms, marked for gateway, sleeping remaining 1.67s)
+[29/30] OK  critical_path_total=360ms  dh=340ms
+    (precomputed next keypair in 328ms, marked for gateway, sleeping remaining 1.67s)
+[30/30] OK  critical_path_total=355ms  dh=340ms
+    (precomputed next keypair in 323ms, marked for gateway, sleeping remaining 1.68s)
+
+Batch complete: 30/30 handshakes succeeded.
+Avg critical-path latency: 363.2 ms
+Avg DH compute time:       340.8 ms
+>>> 
