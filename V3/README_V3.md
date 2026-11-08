@@ -1,7 +1,7 @@
 Tests from V3 Gateway and V3 Pico Protocol.
 
 Each Pico 2W ran the MicroPython script while the output was observed in Thonny :
-  [1] - pico_protocol_v3_batch.py
+  [1] - pico_protocol_v3_batch_px.py (where x is set to the Pico #)
   
 The Pi 4B (Gateway) ran the following Python scripts simultaneously :
   [1] - power_logger.py
