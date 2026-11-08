@@ -1,0 +1,7 @@
+>>> %Run -c $EDITOR_CONTENT
+
+MPY: soft reboot
+WiFi connected: ('192.168.4.130', '255.255.255.0', '192.168.4.1', '192.168.4.1')
+Sent HELLO, nonce = 1640f4e7792f1259894e755ee8610992
+Unexpected response: b'CHALLENGE|\xd7\x9e\x88\xe8\x87\xa8\x8d\x89\xca\x9f\xf2aw\x81|\xd6'
+>>> 

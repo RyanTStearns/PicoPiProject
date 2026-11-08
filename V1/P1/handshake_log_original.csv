@@ -1,0 +1,2 @@
+timestamp_iso,device_id,client_ip,latency_ms,outcome
+2026-11-07T23:44:53.782671,unknown,192.168.4.130,0.413,bad_hello

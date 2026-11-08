@@ -1,0 +1,9 @@
+>>> %Run -c $EDITOR_CONTENT
+
+MPY: soft reboot
+WiFi connected: ('192.168.4.67', '255.255.255.0', '192.168.4.1', '192.168.4.1')
+Sent HELLO, nonce = b54dbbc8a75c7f8758a52229ffb8b791
+Received CHALLENGE, gateway_nonce = 44e3c8d924abd1b701e30efa904f8114
+Derived session key: ac5a4d68bbca67a1e07f9a6de8cb82db1dcd420a6c831bae08daf02c9aeebe19
+Handshake SUCCESSFUL -- session key established.
+>>> 

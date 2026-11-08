@@ -1,0 +1,5 @@
+Protocol server listening on 0.0.0.0:5000
+
+[192.168.4.130] HELLO from Pico2W-1, nonce=4d7d7567e558f602fd8b44ed2e380cf7
+[192.168.4.130] Derived session key: 7125221db9a323c4be16699ca7f2fc90f48353cf0ff89c8cf8a917d7540d704a
+[192.168.4.130] Malformed AUTH: b'AUTH||l\x97q\x89\xd3\xcb(\xc6\xdac\xc3`\xaa\x9e\x04\x10J8\x96\xa1\xed\xc7ty}2\xc34=\xecy'

@@ -1,0 +1,5 @@
+Protocol server listening on 0.0.0.0:5000
+
+[192.168.4.67] HELLO from Pico2W-2, nonce=f170b4ed1eda84c809ffac14d5ceca73
+[192.168.4.67] Derived session key: 186556373ae1403dd40ac163287c372824a48430fbe8a4566013e2d279d2ed1b
+[192.168.4.67] Pico2W-2 AUTH_OK -- handshake complete
