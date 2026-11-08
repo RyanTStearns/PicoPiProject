@@ -1,0 +1,35 @@
+(pico-env) rypi@StearnsPiGateway:~/Project/Zen/V3/P1/b $ python3 ../../../../analyze_power.py handshake_log_original.csv power_log.csv 
+
+======================================================================
+POWER ANALYSIS REPORT
+======================================================================
+
+Device: Pico2W-1  (27 handshakes analyzed, mode: per-handshake)
+  Idle current:           54.06 mA
+  Idle power:             0.2668 W
+  Handshake avg current:  56.15 mA
+  Handshake avg power:    0.2782 W
+  Current delta (active - idle): +2.10 mA
+  Estimated energy per handshake: 3.134 mJ
+
+======================================================================
+(pico-env) rypi@StearnsPiGateway:~/Project/Zen/V3/P1/b $ python3 ../analyze_power.py handshake_log_original.csv power_log.csv 
+NOTE: Pico2W-1 -- only 27/30 handshakes had a power sample land inside their (very short) window. Partial per-handshake coverage like this is unreliable for sub-10ms events -- falling back to BLOCK-LEVEL averaging instead for a complete, unbiased result.
+NOTE: Pico2W-1 -- no individual handshake window had a power sample (handshakes shorter than sampling interval). Falling back to BLOCK-LEVEL average over the full 58.85s burst (30 handshakes, 10239 power samples). This assumes handshakes ran back-to-back with minimal idle gaps in between.
+
+======================================================================
+POWER ANALYSIS REPORT
+======================================================================
+
+Device: Pico2W-1  (30 handshakes analyzed, mode: block-level (burst))
+  Idle current:           54.06 mA
+  Idle voltage:           4.935 V
+  Idle power:             0.2668 W
+  Handshake avg current:  53.91 mA
+  Handshake avg voltage:  4.935 V
+  Handshake avg power:    0.2661 W
+  Current delta (active - idle): -0.15 mA
+  Voltage delta (active - idle): +0.000 V
+  Estimated energy per handshake: 521.958 mJ
+
+======================================================================
