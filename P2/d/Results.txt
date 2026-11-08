@@ -1,0 +1,36 @@
+(pico-env) rypi@StearnsPiGateway:~/Project/Zen/V3/P2/d $ python3 ../../../../analyze_power.py handshake_log_original.csv power_log.csv 
+
+======================================================================
+POWER ANALYSIS REPORT
+======================================================================
+
+Device: Pico2W-2  (26 handshakes analyzed, mode: per-handshake)
+  Idle current:           67.32 mA
+  Idle power:             0.3271 W
+  Handshake avg current:  76.00 mA
+  Handshake avg power:    0.3660 W
+  Current delta (active - idle): +8.68 mA
+  Estimated energy per handshake: 4.075 mJ
+
+======================================================================
+(pico-env) rypi@StearnsPiGateway:~/Project/Zen/V3/P2/d $ python3 ../analyze_power.py handshake_log_original.csv power_log.csv 
+NOTE: Pico2W-2 -- only 26/30 handshakes had a power sample land inside their (very short) window. Partial per-handshake coverage like this is unreliable for sub-10ms events -- falling back to BLOCK-LEVEL averaging instead for a complete, unbiased result.
+NOTE: Pico2W-2 -- no individual handshake window had a power sample (handshakes shorter than sampling interval). Falling back to BLOCK-LEVEL average over the full 58.80s burst (30 handshakes, 9944 power samples). This assumes handshakes ran back-to-back with minimal idle gaps in between.
+
+======================================================================
+POWER ANALYSIS REPORT
+======================================================================
+
+Device: Pico2W-2  (30 handshakes analyzed, mode: block-level (burst))
+  Idle current:           67.32 mA
+  Idle voltage:           4.862 V
+  Idle power:             0.3271 W
+  Handshake avg current:  66.83 mA
+  Handshake avg voltage:  4.863 V
+  Handshake avg power:    0.3247 W
+  Current delta (active - idle): -0.49 mA
+  Voltage delta (active - idle): +0.001 V
+  Estimated energy per handshake: 636.486 mJ
+
+======================================================================
+(pico-env) rypi@StearnsPiGateway:~/Project/Zen/V3/P2/d $ 
