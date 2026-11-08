@@ -1,0 +1,20 @@
+WARNING: dropping 1 unparseable row(s) from power_log.csv (likely a truncated final write)
+NOTE: Pico2W-2 -- only 29/30 handshakes had a power sample land inside their (very short) window. Partial per-handshake coverage like this is unreliable for sub-10ms events -- falling back to BLOCK-LEVEL averaging instead for a complete, unbiased result.
+NOTE: Pico2W-2 -- no individual handshake window had a power sample (handshakes shorter than sampling interval). Falling back to BLOCK-LEVEL average over the full 3.40s burst (30 handshakes, 607 power samples). This assumes handshakes ran back-to-back with minimal idle gaps in between.
+
+======================================================================
+POWER ANALYSIS REPORT
+======================================================================
+
+Device: Pico2W-2  (30 handshakes analyzed, mode: block-level (burst))
+  Idle current:           69.88 mA
+  Idle voltage:           4.856 V
+  Idle power:             0.3390 W
+  Handshake avg current:  70.18 mA
+  Handshake avg voltage:  4.855 V
+  Handshake avg power:    0.3387 W
+  Current delta (active - idle): +0.30 mA
+  Voltage delta (active - idle): -0.001 V
+  Estimated energy per handshake: 38.389 mJ
+
+======================================================================
