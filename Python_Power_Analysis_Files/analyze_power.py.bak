@@ -1,0 +1,146 @@
+#!/usr/bin/env python3
+"""
+analyze_power.py
+------------------
+Correlates a handshake log (original or forward-secret) with the power
+log captured during the same session, and reports:
+  - Idle baseline current/power per device
+  - Average current/power DURING each handshake window
+  - Estimated energy (in millijoules) consumed per handshake
+
+Both logs must share the same gateway clock (they do, since both are
+timestamped by gateway_protocol_v*.py and power_logger.py running on
+the same machine during the same session).
+
+Requires: pip install pandas
+
+Run:
+    python3 analyze_power.py handshake_log_forward_secret.csv power_log.csv
+    python3 analyze_power.py handshake_log_original.csv power_log.csv
+"""
+
+import sys
+import pandas as pd
+
+
+def load_logs(handshake_path, power_path):
+    handshakes = pd.read_csv(handshake_path, parse_dates=["timestamp_iso"])
+    power = pd.read_csv(power_path, parse_dates=["timestamp_iso"])
+    return handshakes, power
+
+
+def analyze(handshakes, power):
+    # Only look at successful handshakes -- failed ones don't represent
+    # real protocol cost.
+    handshakes = handshakes[handshakes["outcome"] == "AUTH_OK"].copy()
+
+    # Different protocol versions log the latency column under different
+    # names (v3: "latency_ms", v4: "total_latency_ms") -- detect which one
+    # is present rather than assuming.
+    if "total_latency_ms" in handshakes.columns:
+        latency_col = "total_latency_ms"
+    elif "latency_ms" in handshakes.columns:
+        latency_col = "latency_ms"
+    else:
+        raise KeyError(
+            "Could not find a latency column in this handshake log "
+            "(expected 'latency_ms' or 'total_latency_ms')."
+        )
+
+    # Handshake end time is the logged timestamp; start time is end minus
+    # the recorded latency.
+    handshakes["end_time"] = handshakes["timestamp_iso"]
+    handshakes["start_time"] = handshakes["end_time"] - pd.to_timedelta(
+        handshakes[latency_col], unit="ms"
+    )
+    handshakes["total_latency_ms"] = handshakes[latency_col]
+
+    results = []
+
+    for device in handshakes["device_id"].unique():
+        device_handshakes = handshakes[handshakes["device_id"] == device]
+        device_power = power[power["device"] == device].copy()
+
+        if device_power.empty:
+            print(f"WARNING: no power data found for {device}, skipping.")
+            continue
+
+        # Idle baseline: power samples NOT inside any handshake window.
+        in_any_window = pd.Series(False, index=device_power.index)
+        for _, hs in device_handshakes.iterrows():
+            mask = (device_power["timestamp_iso"] >= hs["start_time"]) & (
+                device_power["timestamp_iso"] <= hs["end_time"]
+            )
+            in_any_window |= mask
+
+        idle_power = device_power[~in_any_window]
+        idle_current_avg = idle_power["current_ma"].mean()
+        idle_power_avg = idle_power["power_w"].mean()
+
+        # Per-handshake stats
+        handshake_currents = []
+        handshake_powers = []
+        handshake_energies_mj = []
+
+        for _, hs in device_handshakes.iterrows():
+            window = device_power[
+                (device_power["timestamp_iso"] >= hs["start_time"])
+                & (device_power["timestamp_iso"] <= hs["end_time"])
+            ]
+            if window.empty:
+                continue
+
+            avg_current = window["current_ma"].mean()
+            avg_power = window["power_w"].mean()
+            duration_s = hs["total_latency_ms"] / 1000.0
+            energy_mj = avg_power * duration_s * 1000  # W * s * 1000 = mJ
+
+            handshake_currents.append(avg_current)
+            handshake_powers.append(avg_power)
+            handshake_energies_mj.append(energy_mj)
+
+        if not handshake_currents:
+            print(f"WARNING: no power samples fell inside any {device} "
+                  f"handshake window -- power logger may be sampling too "
+                  f"slowly relative to handshake duration.")
+            continue
+
+        results.append({
+            "device": device,
+            "num_handshakes": len(handshake_currents),
+            "idle_current_ma": idle_current_avg,
+            "idle_power_w": idle_power_avg,
+            "handshake_current_ma_avg": sum(handshake_currents) / len(handshake_currents),
+            "handshake_power_w_avg": sum(handshake_powers) / len(handshake_powers),
+            "handshake_energy_mj_avg": sum(handshake_energies_mj) / len(handshake_energies_mj),
+        })
+
+    return results
+
+
+def print_report(results):
+    print("\n" + "=" * 70)
+    print("POWER ANALYSIS REPORT")
+    print("=" * 70)
+
+    for r in results:
+        print(f"\nDevice: {r['device']}  ({r['num_handshakes']} handshakes analyzed)")
+        print(f"  Idle current:           {r['idle_current_ma']:.2f} mA")
+        print(f"  Idle power:             {r['idle_power_w']:.4f} W")
+        print(f"  Handshake avg current:  {r['handshake_current_ma_avg']:.2f} mA")
+        print(f"  Handshake avg power:    {r['handshake_power_w_avg']:.4f} W")
+        current_delta = r['handshake_current_ma_avg'] - r['idle_current_ma']
+        print(f"  Current delta (active - idle): {current_delta:+.2f} mA")
+        print(f"  Estimated energy per handshake: {r['handshake_energy_mj_avg']:.3f} mJ")
+
+    print("\n" + "=" * 70)
+
+
+if __name__ == "__main__":
+    if len(sys.argv) != 3:
+        print("Usage: python3 analyze_power.py <handshake_log.csv> <power_log.csv>")
+        sys.exit(1)
+
+    handshakes, power = load_logs(sys.argv[1], sys.argv[2])
+    results = analyze(handshakes, power)
+    print_report(results)
