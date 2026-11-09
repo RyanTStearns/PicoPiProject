@@ -14,10 +14,10 @@ The directory structure is as follows :
   -[4] Python_Other_Files - contains any other test files used in implementation.  
   -[5] Python_Power_Analysis_Files - contains the power analysis python scripts used to calculate power used during handshakes.  
   -[6] V1 - contains Version 1 tests, utilizing the V1 gateway and pico protocols. Basic connection test.  
-  -[7] V2 - contains Version 2 tests, utilizing the V2 gateway and pico protocols. Testing power analysis with connection.
-  -[8] V3 - contains Version 3 tests, utilizing the V3 gateway and pico protocols. Testing reason for errors on (~10%) handshakes.
-  -[9] V3_burst - contains Version 3_burst tests, utilizes the V3 gateway and V3_burst pico protocols. Testing if sending packets in burst fixes error.
-  -[10] V4 - contains Version 4 tests, utilizing the V4 gateway and pico protocols.  Testing forward-secrecy implementation.
+  -[7] V2 - contains Version 2 tests, utilizing the V2 gateway and pico protocols. Testing power analysis with connection.  
+  -[8] V3 - contains Version 3 tests, utilizing the V3 gateway and pico protocols. Testing reason for errors on (~10%) handshakes.  
+  -[9] V3_burst - contains Version 3_burst tests, utilizes the V3 gateway and V3_burst pico protocols. Testing if sending packets in burst fixes error.  
+  -[10] V4 - contains Version 4 tests, utilizing the V4 gateway and pico protocols.  Testing forward-secrecy implementation.  
   -[11] V5_PreComp_Marked - contains (FINAL) Version 5 tests, utilizing the V4 gateway, and v5_precomp_marked pico protocols.  
 
 
