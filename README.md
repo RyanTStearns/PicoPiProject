@@ -25,5 +25,6 @@ The directory structure is as follows :
   Detailed description for Version Folders :  
     - Each version will contain two folders, "P1" and "P2", where P1 = Pico2W-1 and P2 = Pico2W-2.  
     - Each P1 & P2 folder will contain five folders "a" "b" "c" "d" and "e".  Each of these folders is a single test instance.  
-    - Each a/b/c/d/e folder will contain the text files "Results.txt" and "Thonny.txt" where Results.txt = Output of Power Analysis and Thonny.txt = Pico Output  
-    - 
+    - All a/b/c/d/e folders will contain x.pcap, the packet capture correlating to that test instance.  (Where x = Test Instance Letter).  
+    - All will include the text files "Results.txt" and "Results2.txt" - the result of running the power analysis functions.   
+    - All will include "Thonny.txt" where Thonny.txt = Pico Output  
