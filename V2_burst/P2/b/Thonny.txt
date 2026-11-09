@@ -1,0 +1,37 @@
+>>> %Run -c $EDITOR_CONTENT
+
+MPY: soft reboot
+WiFi connected: ('192.168.4.67', '255.255.255.0', '192.168.4.1', '192.168.4.1')
+[1] Unexpected response: b'CHALLENGE||5%f\xd9\xb7\x99\x99,\x04=\x86\x9b\x19\xdb,'
+[2/30] FAILED: b'AUTH_FAIL'
+[3/30] FAILED: b'AUTH_FAIL'
+[4/30] FAILED: b'AUTH_FAIL'
+[5/30] OK: b'AUTH_OK'
+[6/30] OK: b'AUTH_OK'
+[7/30] OK: b'AUTH_OK'
+[8/30] OK: b'AUTH_OK'
+[9/30] OK: b'AUTH_OK'
+[10/30] OK: b'AUTH_OK'
+[11/30] OK: b'AUTH_OK'
+[12/30] OK: b'AUTH_OK'
+[13/30] OK: b'AUTH_OK'
+[14/30] OK: b'AUTH_OK'
+[15/30] OK: b'AUTH_OK'
+[16/30] OK: b'AUTH_OK'
+[17/30] OK: b'AUTH_OK'
+[18/30] OK: b'AUTH_OK'
+[19/30] OK: b'AUTH_OK'
+[20] Unexpected response: b'CHALLENGE|\xee\x08|Q\x03\x1b5h \xe8\xf3\xb9\xca\x96\xfc\x9c'
+[21/30] OK: b'AUTH_OK'
+[22/30] OK: b'AUTH_OK'
+[23/30] OK: b'AUTH_OK'
+[24/30] OK: b'AUTH_OK'
+[25/30] OK: b'AUTH_OK'
+[26] Unexpected response: b"CHALLENGE|\x94;\x87'|xU\x88?\xe6\xde\x05\x02%\xa5\x96"
+[27/30] OK: b'AUTH_OK'
+[28/30] OK: b'AUTH_OK'
+[29/30] OK: b'AUTH_OK'
+[30] Unexpected response: b'CHALLENGE|\xd6-\x05|\xcd:\x12\xa4O\xbd\x9a{\x8e\x14\xa9;'
+
+Batch complete: 23/30 handshakes succeeded.
+>>> 

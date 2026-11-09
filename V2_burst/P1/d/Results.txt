@@ -1,0 +1,14 @@
+
+======================================================================
+POWER ANALYSIS REPORT
+======================================================================
+
+Device: Pico2W-1  (24 handshakes analyzed, mode: per-handshake)
+  Idle current:           56.79 mA
+  Idle power:             0.2800 W
+  Handshake avg current:  58.49 mA
+  Handshake avg power:    0.2897 W
+  Current delta (active - idle): +1.70 mA
+  Estimated energy per handshake: 9.568 mJ
+
+======================================================================
