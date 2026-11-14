@@ -3,4 +3,14 @@ View the physical wiring implementation of the project at the following link :
 https://app.cirkitdesigner.com/project/1760e14e-a1d1-4b3c-874a-11faebb09daa
 
 
-Note : I made every attempt to keep the Pico 2Ws as "bare" as possible.  They have only two wires each, the VSYS input (from the corresponding INA219 Vin -), and the common ground.  You will notice all the LCDs, and the VSYS power for the INA219's are powered by the Raspberry Pi 4B 5V GPIO.  All logging was additionally only done on the Raspberry Pi 4B.  This means the only power overhead on the Pico's themselves is what the cryptography, forward-secrecy, and wifi power demands.  Additionally, each INA219's Vin + is powered by an external power supply, supplying each a separate rail of 5V power.  This eliminates any fluctuations that may have occurred if the power was split off the Raspberry Pi's 5V GPIO pin for each Pico 2W.  
+Note : I made every attempt to keep the Pico 2Ws as "bare" as possible.  They have only two wires each, the VSYS input (from the corresponding INA219 Vin -), and the common ground.  
+You will notice all the LCDs, and the VSYS power for the INA219's are powered by the Raspberry Pi 4B 5V GPIO.  All logging was additionally only done on the Raspberry Pi 4B.  
+This means the only power overhead on the Pico's themselves is what the cryptography, forward-secrecy, and wifi power demands.  
+Additionally, each INA219's Vin + is powered by an external power supply, supplying each a separate rail of 5V power.  This eliminates any fluctuations that may have occurred if 
+the power was split off the Raspberry Pi's 5V GPIO pin for each Pico 2W.  
+
+Additional Notes : Diagram is limited on bridging physical addresses.  The correct addresses, achieved by physically soldering address pads together, are :  
+[1] - 0x24 - LCD #1, corresponds to INA219 0x40 for Pico2W-1  
+[2] - 0x27 - LCD #2, corresponds to INA219 0x41 for Pico2W-2  
+[3] - 0x40 - INA219 #1, corresponds to Pico2W-1  
+[4] - 0x41 - INA219 #2, corresponds to Picow2W-2  
