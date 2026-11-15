@@ -1,0 +1,28 @@
+
+======================================================================
+THREE-WINDOW POWER ANALYSIS REPORT
+======================================================================
+
+Device: Pico2W-2
+  TRUE IDLE:
+    avg current: 63.07 mA, avg power: 0.3115 W
+  HANDSHAKE CRITICAL PATH (30 events):
+    avg current: 67.10 mA, avg power: 0.3305 W
+    energy per handshake: 118.149 mJ
+  PRECOMPUTE WINDOW (30 events):
+    avg current: 67.17 mA, avg power: 0.3309 W
+    energy per precompute: 109.037 mJ
+  TOTAL ENERGY PER FULL CYCLE (handshake + precompute): 227.186 mJ
+
+Device: Pico2W-1
+  TRUE IDLE:
+    avg current: 62.29 mA, avg power: 0.3087 W
+  HANDSHAKE CRITICAL PATH (30 events):
+    avg current: 64.42 mA, avg power: 0.3197 W
+    energy per handshake: 114.123 mJ
+  PRECOMPUTE WINDOW (30 events):
+    avg current: 65.31 mA, avg power: 0.3235 W
+    energy per precompute: 106.589 mJ
+  TOTAL ENERGY PER FULL CYCLE (handshake + precompute): 220.712 mJ
+
+======================================================================
