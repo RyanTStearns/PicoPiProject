@@ -1,0 +1,6 @@
+View a side-by-side real-time run of the Rasbperry Pi 4B's (Gateway) console, and the physical Pico's & LCDs.
+
+https://youtu.be/vBwmmGBzWuY
+
+
+Results from this demo are saved in the V7_Demo directory.
